@@ -38,7 +38,11 @@
         "health-check": "ts-node src/scripts/healthCheck.ts",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "prebuild": "node src/scripts/checkNodeVersion.js",
+        "prehealth-check": "node src/scripts/checkNodeVersion.js",
+        "prestart": "node src/scripts/checkNodeVersion.js",
+        "predev": "node src/scripts/checkNodeVersion.js"
     },
     "keywords": [],
     "author": "vladmeer",
@@ -67,11 +71,12 @@
         "axios": "^1.7.9",
         "chalk": "^5.4.1",
         "dotenv": "^16.4.7",
-        "encrypt-layout-helper": "^3.9.2",
         "ethers": "^5.8.0",
-        "keccak256-helper": "^1.3.2",
         "moment": "^2.30.1",
         "mongoose": "^8.9.5",
         "ora": "^8.2.0"
+    },
+    "engines": {
+        "node": ">=18"
     }
 }
